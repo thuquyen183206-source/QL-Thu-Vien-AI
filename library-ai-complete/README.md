@@ -16,9 +16,11 @@ Yêu cầu: Docker Desktop đang chạy.
 docker compose up --build -d
 ```
 
-Mở: `http://localhost:8090`
+Mở: `http://localhost:8090` (giao diện và API dùng chung cổng này)
 
-API health: `http://localhost:8000/api/health`
+Trong VS Code, mở Run and Debug, chọn `Chạy thư viện - cổng 8090` rồi bấm F5. Cấu hình sẽ tự khởi động Docker Compose và mở ứng dụng tại cổng 8090.
+
+API health: `http://localhost:8090/api/health`
 
 MySQL host từ Windows: `localhost:3307`, database `library_ai`, user `library_user`, password `library_pass`.
 

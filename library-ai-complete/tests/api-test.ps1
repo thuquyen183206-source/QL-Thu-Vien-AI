@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-$base = if ($env:API_URL) { $env:API_URL.TrimEnd('/') } else { 'http://localhost:8000/api' }
+$base = if ($env:API_URL) { $env:API_URL.TrimEnd('/') } else { 'http://localhost:8090/api' }
 
 function Call-Api([string]$Path, [string]$Method = 'GET', $Body = $null, [hashtable]$Headers = @{}) {
     $params = @{ Uri = "$base$Path"; Method = $Method; Headers = $Headers; ErrorAction = 'Stop' }

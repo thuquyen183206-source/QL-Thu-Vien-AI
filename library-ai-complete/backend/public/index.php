@@ -1,9 +1,9 @@
 <?php
 require_once '/var/www/src/helpers.php';
 require_once '/var/www/src/ai.php';
-$allowedOrigin = getenv('CORS_ORIGIN') ?: 'http://localhost:8090';
-if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] === $allowedOrigin) {
-  header('Access-Control-Allow-Origin: '.$allowedOrigin);
+$allowedOrigins = array_filter(array_map('trim', explode(',', getenv('CORS_ORIGIN') ?: 'http://localhost:8090')));
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowedOrigins, true)) {
+  header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
   header('Vary: Origin');
 }
 header('Access-Control-Allow-Headers: Content-Type, Authorization'); header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');

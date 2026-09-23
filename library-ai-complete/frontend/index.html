@@ -61,7 +61,7 @@
 </div>
 <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="modal"></div></div><div class="toast" id="toast"></div>
 <script>
-const API=location.protocol==='file:'?'http://localhost:8000/api':`${location.protocol}//${location.hostname || 'localhost'}:8000/api`;
+const API=location.protocol==='file:'?'http://localhost:8090/api':'/api';
 let token=localStorage.getItem('library-token')||''; let currentUser=null; let currentRole='reader'; let data={books:[],readers:[],loans:[],reservations:[]}; let loanFilter='all';
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 async function api(path,opt={}){const h={'Content-Type':'application/json',...(opt.headers||{})};if(token)h.Authorization='Bearer '+token;const r=await fetch(API+path,{...opt,headers:h});let j={};try{j=await r.json()}catch{}if(!r.ok)throw new Error(j.message||'Có lỗi xảy ra');return j}

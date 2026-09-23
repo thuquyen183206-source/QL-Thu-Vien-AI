@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Chạy thư viện - cổng 8090",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:8090",
+      "webRoot": "${workspaceFolder}/frontend",
+      "preLaunchTask": "library:start"
+    }
+  ]
+}
