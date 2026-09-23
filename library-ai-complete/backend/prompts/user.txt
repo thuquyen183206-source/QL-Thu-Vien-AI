@@ -1,0 +1,7 @@
+Câu hỏi của người dùng:
+{{QUESTION}}
+
+CONTEXT dữ liệu thư viện đã được lọc theo quyền:
+{{CONTEXT_JSON}}
+
+Hãy trả lời theo system prompt và schema JSON đã yêu cầu.
